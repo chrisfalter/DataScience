@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
 For this initial stab at Python unit tests, I wrote a single test function for each function under test. Arguments and expected values are grouped as a tuple, and multiple test scenarios can be played for a function by iterating through a list of argument/expected-value tuples. At the cost of ease of comprehension, this methodology facilitates the quick creation of a relatively complete set of tests for a function library. For a later assignment I wrote unit tests in a way that maximizes comprehension. Stay tuned!
 
-If you'd like to play with my code, just download the function libraries and test class, unzip them to a directory of your choice, navigate to that directory, and run the following command:
+If you'd like to play with my code, just download [the function libraries and test class](https://github.com/chrisfalter/DataScience/blob/master/Python/IntroToUnitTest/IntroToUnitTests.zip), unzip them to a directory of your choice, navigate to that directory, and run the following command:
 
 `$ python test_assignment5.py`
 
