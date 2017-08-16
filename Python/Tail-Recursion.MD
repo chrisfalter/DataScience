@@ -13,7 +13,7 @@ def factorial(n, previous = 1):
 
 Note that I have provided a default argument for the "previous" formal parameter, which allows me to call the function more simply. Here's what happens when I use the function to calculate 4!:
 
-factorial-output.PNG
+![Output from calling factorial(4)](https://github.com/chrisfalter/DataScience/blob/master/Python/factorial-output.PNG)
 
 The first parameter *(n)* is used to keep track of when the floor condition is reached. The second parameter *(previous)* is used to accumulate the value that gets returned.
 
