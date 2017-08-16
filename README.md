@@ -1,12 +1,14 @@
 # DataScience
 ## The Goal of This Repository
 This repository holds my technical explorations in various sub-disciplines of data science (Python, R, statistics, neural network programming, etc.) I am now working on a big data project for the Defense Intelligence Agency, but I never stop working on my craft. I hope you learn something useful as you read about my coding adventures. Enjoy!
+## Topics
+* [Python](https://github.com/chrisfalter/DataScience/tree/master/Python)
 ## My Story
 I have been a data geek all my life. For science fair projects, I didn't build baking soda volcanos; instead, I analyzed weather forecast accuracy and factors in high school student fitness. As an undergrad at Princeton, I aced linear algebra, multivariable calculus, and several math-track economics courses. My interests in social justice and statistical analysis aligned as I pored over US Census Bureau data to identify gentrification trends for a course in urban economics. Continuing in this vein, I enrolled in a graduate level course in Comparative Urban Development, where I happily immersed myself in analyzing migration and growth patterns in India.
 
 Shortly after my graduation in 1983, I joined a Christian humanitarian organization as the administrator of a nutrition and health education project in West Africa. To increase our effectiveness, my wife and I were required to abandon the American lifestyle in favor of local dress, custom, and language. Fortunately, I was not called upon to abandon my passion for data.
 
-The previous project management had collected children’s weight and age data as points on a line graph. While this permitted a rudimentary calculation of the percentage of children who fell below the 80% threshold in weight-for-age, I and my leadership wanted to explore questions such as:
+The previous project management had collected children’s weight and age data as points on a scatter plot. While this permitted a rudimentary calculation of the percentage of children who fell below the 80% threshold in weight-for-age, I and my leadership wanted to explore questions such as:
 
 - *What percentage of the children were improving or regressing?* Our intervention would be different for perpetually malnourished children than for those who fluctuated between malnutrition and proper development.
 - *Was there a critical age span where children were at greatest risk?* If so, we wanted to focus interventions on that cohort.
