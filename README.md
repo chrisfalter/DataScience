@@ -1,5 +1,5 @@
 # DataScience
-## The Goal of This Repository
+## Why You Might Be Interested in This Repository
 This repository holds the lessons I've learned as I've explored various sub-disciplines of data science (Python, R, statistics, neural network programming, etc.). I am now working on a big data project for the Defense Intelligence Agency, but I never stop working on my craft. I hope you learn something useful as you read about my coding adventures. Enjoy!
 ## Topics
 * [Python](https://github.com/chrisfalter/DataScience/tree/master/Python)
