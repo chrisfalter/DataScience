@@ -1,3 +1,4 @@
+# Numpy for the Win!
 Typically, data for machine learning are structured as a two dimensional table whose rows are observations and columns are variables. You can also think of the data as a set of vectors, one per observation, having as many dimensions as there are variables. However you conceptualize the data, though, in any data set of significant size you are going to be doing a lot of math over a large table/matrix of data.
 
 To analyze such data, Python beginners might be tempted to write loops and perform an operation on each cell in the table. For all but the most trivial data sets, however, this is a big mistake. Instead, you should use the `numpy` library which is optimized for performing vectorized operations across a tabular structure. Betraying its scientific computing origins, numpy refers to tables of data as *arrays*.
@@ -31,7 +32,7 @@ print("Vectorized wall clock time:", timeVector)
 print("Loop wall clock time:", timeLoop)
 ```
 
-I create a 1000 x 1000 array of data, then perform an element-wise multiplication in both looping and vectorized (numpy) fashion. The execution time on my laptop is quite remarkable:
+The script creates a 1000 x 1000 array of data, then performs an element-wise multiplication in both looping and vectorized (numpy) fashion. The execution time comparison on my laptop is quite remarkable:
 
 ```
 Vectorized wall clock time: 0.0024505094793539754
