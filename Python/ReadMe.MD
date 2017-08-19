@@ -3,3 +3,4 @@ Python is an excellent all-purpose language that can be used for scripting, web 
 * [Tail Recursion](https://github.com/chrisfalter/DataScience/blob/master/Python/Tail-Recursion.MD)
 * [Python as a Functionally Oriented Language](https://github.com/chrisfalter/DataScience/blob/master/Python/FunctionalOrientation.MD)
 * [Introduction to Python Unit Tests](https://github.com/chrisfalter/DataScience/tree/master/Python/IntroToUnitTest)
+* [Numpy for the Win!](https://github.com/chrisfalter/DataScience/blob/master/Python/WhyNumpy-Optimization.MD) - A simple test script shows why numpy can speed up machine learning calculations by orders of magnitude. Also included: a simple example of functional programming.
