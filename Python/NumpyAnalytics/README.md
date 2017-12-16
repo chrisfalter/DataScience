@@ -29,6 +29,7 @@ Once the gradebook array is loaded, my analysis obtains a slice of data via a nu
 scores = gradebook[1:,1:]
 ```
 By convention, the rows and columns of a two-dimensional data set are the first and second indexes of an array, respectively. Since Python uses zero-based indexing, the above line of code incorporates all but the first row and column of the `gradebook` array into the `scores` array. This table provides examples of slicing a numpy array by passing a range or single number to its bracket indexer.
+
 Slice Notation | What You Get
 --------------------|----------------
 `my_array[:,:]` | A view of all the data in `my_array`
