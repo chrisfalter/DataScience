@@ -117,8 +117,8 @@ print(sumResult.shape) # prints "(3,3)"
 print(np.all(sumResult == 2)) # all 9 of the elements == 2, so "True" is printed
 multResult = ones1 * ones2
 print(multResult.shape) # prints "(3,3)"
-print(np.all(multResult == 2)) # all 9 of the elements == 2, so "True" is printed
-divResult = multResult / multResult
+print(np.all(multResult == 1)) # all 9 of the elements == 1, so "True" is printed
+divResult = sumResult / sumResult
 print(np.all(np.equal(ones1, divResult))) # All of the elements in divResult are 1
 ```
 If the two arrays being operated on do not have the same shape, numpy uses *broadcasting* to make the operation succeed. For example, when you add a scalar to an array, numpy broadcasts the scalar into an array with the same shape as the other addend. For example, to add 8 to an array of ones, numpy creates a new array whose elements are all equal to 8:
