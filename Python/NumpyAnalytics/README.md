@@ -20,7 +20,7 @@ The resulting gradebook variable is of type `numpy.ndarray`, which means it's re
 Subsequent code in Question.py/main() persists aggregated statistics and data using the numpy save function. For example, the following line of code persists the averageGrades array into a file named "AverageGrades.npy":
 
 ```python
-    np.save("AverageGrades", averageGrades
+    np.save("AverageGrades", averageGrades)
 ```
 Note that if you do not provide a file extension, the numpy `save` function appends the default `.npy`.
 ## Slicing
