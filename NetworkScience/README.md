@@ -3,4 +3,5 @@ Network science is a very important discipline within data science, because so m
 * Friend networks on Facebook
 * Professional networks on LinkedIn
 * Follower networks on Twitter
+
 This area of my repo displays my explorations of network science in the eponymous course at Indiana University. Our professor for spring 2018, Y.Y. Ahn, is a wonderful instructor and mentor. 
