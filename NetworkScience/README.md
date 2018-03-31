@@ -1,5 +1,5 @@
 # Network Science
-Network science is a very important discipline within data science, because so many of the data sets that interest us can be characterized as networks. The list is endless, but here are a few prominent examples:
+Network science is a very important discipline within data science because so many of the data sets that interest us can be characterized as networks. The list is endless, but here are a few prominent examples:
 * Friend networks on Facebook
 * Professional networks on LinkedIn
 * Follower networks on Twitter
