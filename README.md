@@ -3,6 +3,7 @@
 This repository holds the lessons I've learned as I've explored various sub-disciplines of data science (Python, R, statistics, neural network programming, etc.). I am now working on a big data project for the Defense Intelligence Agency, but I never stop working on my craft. I hope you learn something useful as you read about my data science adventures. Enjoy!
 ## Topics
 * [Python](https://github.com/chrisfalter/DataScience/tree/master/Python)
+* [Network science](https://github.com/chrisfalter/DataScience/tree/master/NetworkScience)
 ## My Story
 I have been a data geek all my life. For science fair projects, I didn't build baking soda volcanos; instead, I analyzed weather forecast accuracy and factors in high school student fitness. As an undergrad at Princeton, I aced linear algebra, multivariable calculus, and several math-track economics courses. My interests in social justice and statistical analysis aligned as I pored over US Census Bureau data to identify gentrification trends for a course in urban economics. Continuing in this vein, I enrolled in a graduate level course in Comparative Urban Development, where I happily immersed myself in analyzing migration and growth patterns in India.
 
