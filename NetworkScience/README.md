@@ -7,6 +7,10 @@ Network science is a very important discipline within data science because so ma
 This area of my repo displays my explorations of network science in the eponymous course at Indiana University. Our professor for spring 2018, Y.Y. Ahn, is a wonderful instructor and mentor. 
 
 ## Explorations
+
+### The Strength of Weak Ties
+Prior to Mark Granovetter's groundbreaking 1973 paper, sociologists had focused their research on the features and advantages of strongly clustered local ties--family, close neighbors, close friends. Granovetter had the moxie to ask if there might be a situation where "weak" ties were more favorable than strong ties, and the gumption to find the data to investigate the question. Granovetter's insights have become even more important in the digital age, as I discuss [here](https://github.com/chrisfalter/DataScience/blob/master/NetworkScience/The%20Strength%20of%20Weak%20Ties.md)
+
 ### Finding the Optimal Community Structure
 One approach to finding the optimal community structure is to optimize some parameter such as modularity over every possible community structure. Except for the smallest networks, this approach _does not work_. The problem is that the number of possible community structures grows exponentially with the number of nodes in a network, making the approach computationally intractable. I explain this in more detail in my [Bell Number Calculator notebook](https://github.com/chrisfalter/DataScience/blob/master/NetworkScience/Bell_Number_Calculator.ipynb); the Bell Number represents the number of possible community structures for a given number of nodes.
 
