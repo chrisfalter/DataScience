@@ -29,7 +29,7 @@ Mark Newman wrote an interesting paper (["Power laws, Pareto distributions and Z
 *   Magnitude of earthquakes
 *   Word frequency
 
-## Forces Giving Rise to the Distributions
+## Factors Giving Rise to the Distributions
 The normal distributions are associated with a mechanism that strictly bounds the observation: a nearly uniform DNA specification for height, and a common engine technology (and perhaps a common speed limit) for highway speed.
 
 The log-normal distributions are associated with low frequency of small numbers (rare are the chess games of under 10 moves or comments of less than 10 characters) and a certain right-skew in the phenomenon (chess games between evenly matched opponents occasionally last 100 moves; motivated forum participants occasionally write a book chapter). However, the power-law does not obtain in these situations because there is something of a built-in limit to the behavior being measured (chess players and forum participants need to eat and sleep).
