@@ -14,6 +14,13 @@ Prior to Mark Granovetter's groundbreaking 1973 paper, sociologists had focused 
 ### Statistical Distributions
 A node in a network has a degree. This doesn't refer to the node's college major, but rather to how many links it has to other nodes. Different kinds of node degree distributions result in different network properties. Although those properties make an interesting topic, in [this little essay](https://github.com/chrisfalter/DataScience/blob/master/NetworkScience/StatisticalDistributions.md) I want to start at the very beginning--a very good place to start!--by describing some of the distributions, providing examples of each one, and discussing the forces that give rise to them.
 
+### Degree Distribution and Network Properties
+Given this very simple probability distribution function for network node degree...
+
+<img src="https://latex.codecogs.com/svg.latex?p\left(k\right)\:=\:Ck^{-\gamma}" />
+
+... we find 3 different regimes and 2 critical points based on the value of the exponent. Within each regime, the values for average distance `<d>`, average degree `<k>`, and degree variance `<k^2>` can be approximately expressed as a function of the exponent and the number of nodes N in the network. It seems like magic, but this is [the mathematical basis for the behavior of scale-free networks](https://github.com/chrisfalter/DataScience/blob/master/NetworkScience/DegreeDistribution.md). 
+
 ### Finding the Optimal Community Structure
 One approach to finding the optimal community structure is to optimize some parameter such as modularity over every possible community structure. Except for the smallest networks, this approach _does not work_. The problem is that the number of possible community structures grows exponentially with the number of nodes in a network, making the approach computationally intractable. I explain this in more detail in my [Bell Number Calculator notebook](https://github.com/chrisfalter/DataScience/blob/master/NetworkScience/Bell_Number_Calculator.ipynb); the Bell Number represents the number of possible community structures for a given number of nodes.
 
