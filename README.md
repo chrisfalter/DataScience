@@ -1,6 +1,8 @@
 # DataScience
 ## Why You Might Be Interested in This Repository
-This repository holds the lessons I've learned as I've explored various sub-disciplines of data science (Python, R, statistics, neural network programming, etc.). I am microservices architecture project for the VA, but I never stop working on my data science craft. I hope you learn something useful as you read about my adventures. Enjoy!
+This repository holds the lessons I've learned as I've explored various sub-disciplines of data science (Python, R, statistics, neural network programming, etc.). I am working on a microservices architecture project for the VA, but I never stop working on my data science craft. 
+
+I hope you learn something useful as you read the code and discussions in the topics below.
 ## Topics
 * [Python](https://github.com/chrisfalter/DataScience/tree/master/Python)
 * [Network science](https://github.com/chrisfalter/DataScience/tree/master/NetworkScience)
