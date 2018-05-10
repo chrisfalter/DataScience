@@ -11,3 +11,4 @@ The key components of search algorithms include:
 
 Some search algorithms add other components, but these are universal.
 ### Code and Insights
+**Uninformed Search**: Uninformed search algorithms such as breadth-first search (BFS) and depth-first search (DFS) do not attempt to apply intelligence to the direction of the search. For this reason they are often called "brute-force" search methods. While both algorithms are uninformed, their differing implementations make them suitable for different problems. In [this Python notebook](https://github.com/chrisfalter/DataScience/blob/master/AI/Search/uninformed_search.ipynb), we test which uninformed algorithm can best solve the N-Rooks Puzzle.
