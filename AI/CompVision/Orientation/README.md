@@ -37,9 +37,9 @@ The validation accuracy of the best architecture was greater than 71%--not bad, 
 ### Credit Where Credit Is Due
 I modularized the team solution and wrote the start-up code for all of the files in this repository. I would be remiss, however, not to acknowledge the excellent work my teammates Anthony and Alex did on shared code in the following files:
 
-+DataFormats.py
-+FileIO.py
-+Orient.py
-+Prediction.py
++ DataFormats.py
++ FileIO.py
++ Orient.py
++ Prediction.py
 
 I take credit or blame, as appropriate, for the remainder of the source files.
