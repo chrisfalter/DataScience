@@ -1,1 +1,1 @@
-## Text Classification with Naive Bayes
+## Document Classification with Naive Bayes
