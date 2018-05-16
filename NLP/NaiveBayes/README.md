@@ -39,7 +39,7 @@ Consider a tweet that has 3 words, *w<sub>1</sub>, w<sub>2</sub>, and w<sub>1</s
 
 ![Bayes for tweets](Bayes_for_tweets.jpg?raw=true)
 
-If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. They posterior for each hypothesis reflects division by the same P(b<sub>1</sub>)P(b<sub>2</sub>)P(b<sub>3</sub>), therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
+If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. The posterior for each hypothesis reflects division by the same P(b<sub>1</sub>)P(b<sub>2</sub>)P(b<sub>3</sub>); therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
 
 It's worth noting that Naive Bayes is not very good at estimating the actual posterior probabilities, even though it is very good at predicting the best hypothesis.
 
