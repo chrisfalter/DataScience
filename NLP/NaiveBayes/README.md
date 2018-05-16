@@ -18,7 +18,7 @@ Bayes Theorem gives you a framework for updating a belief when you observe new e
 
 Let's define the terms:
 + **Prior probability** is the measure of our belief about some hypothesis *A* before we observe new evidence *B*. It corresponds to *P(A)* in the standard formulation. 
-+ A **Likelihood function**  measures the probability that the evidence *B* would be observed, given the existence of *A*.
++ A **Likelihood function**  measures the probability that the evidence *B* would be observed, given the existence of *A*. This supports the intuitive notion that the greater the likelihood, the more the posterior belief in the hypothesis will increase.
 + The **Evidence function** measures the probability that the evidence *B* would be observed, independent of *A* or *not-A*. The fact that it is in the denominator supports the intuitive notion that the more likely the observation of *B* is--independent of *A*--the less the observation can be used to support hypothesis *A*.
 + The **Posterior probability** is the measure of our belief in hypothesis *A* now that we have observed evidence *B*.
 
