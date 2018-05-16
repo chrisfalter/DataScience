@@ -48,6 +48,8 @@ This section discusses the source code in [the TweetClassifier class](TweetClass
 #### Data Structures
 The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 12 cities) already identifies the distribution that matters in the analysis of tweet geolocation.
 
+Each word within the set of tweets is a feature. Given the vast number of tweets, implementing them as feature vectors would have used an enormous amount of space needlessly. Instead, I implemented each tweet as a list of words that appeared in the tweet; effectively, this is a sparse array.
+
 #### Avoiding Zero Probabilities.
 In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
 
@@ -75,6 +77,9 @@ Thus the use of location name fragments can facilitate accuracy of prediction. A
 
 Since the location candidates of future tweet datasets is unknown, the TweetClassifier uses two feature generation strategies: a hard-coded one based on the original set of 12 locations, and a dynamic one. Both strategies are used, and the one which has the
 most accurate results is used to write the output. The dynamic feature generation strategy improves the accuracy on the test data from ~64% to ~67%. 
+
+#### Hand-Coded Algorithm
+While several Python modules such as scikit-learn offer Naive Bayes implementations, I coded the implementation myself because that's what graduate students do when they want to demonstrate their mastery of a concept!
 
 ### Instructions for Running the Code
 Download the Python and txt files from this directory. Your command-line should include arguments for 3 paths:
