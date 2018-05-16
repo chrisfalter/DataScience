@@ -44,7 +44,7 @@ If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., tha
 It's worth noting that Naive Bayes is not very good at estimating the actual posterior probabilities, even though it is very good at predicting the best hypothesis.
 
 ### Design Decisions
-This section discusses the source code in [the TweetClassifier class](TweetClassifier.py) and related functions. The [geolocate.py script file](geolocate.py) simply processes command line arguments and runs the TweetClassifier `train()` and `predict()` methods.
+This section discusses the source code in [the TweetClassifier class](TweetClassifier.py) and related functions. The [geolocate.py script file](geolocate.py) simply processes command line arguments, runs the TweetClassifier `train()` and `predict()` methods, and writes output to the console and file system.
 #### Data Structures
 The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 10 cities) already identifies the distribution that matters in the analsis of tweet geolocation.
 
