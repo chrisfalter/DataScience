@@ -57,7 +57,7 @@ The `_calculateProbabilities()` method in the TweetClassifier class uses Laplace
 Inspection of a sample of tweets revealed several problems that interfered with accurate prediction:
 + Non-ASCii characters
 + Punctuation characters
-+ HTML Special Entities (e.g., “&gt;”)
++ HTML Special Entities (e.g., “&amp;gt;”)
 To address these problems, the TweetClassifier.py source file provides multiple functions to rmove all such characters from the tweets.
 
 #### Lower Case vs. Upper Case
