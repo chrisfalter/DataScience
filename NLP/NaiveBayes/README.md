@@ -66,6 +66,15 @@ In order to prevent different character case preferences of Twitter users from i
 #### Inclusion/Exclusion of Rare Terms
 Since extremely rare terms might have undue influence on the analysis, the algorithm was tested by varying the minimum threshold for word appearances in the training corpus. Specifically, accuracy for a threshold of appearances N = { 1 - 20 } was evaluated, and the
 maximum accuracy was selected. The threshold of N = 0 provided maximum accuracy, and the accuracy decreased almost monotonically as the appearance threshold increased. This should not be surprising; every small piece of information can increase the accuracy of the analysis.
+#### Stop Words
+Very common words such as *a*, *an*, and *the* can have an outsize influence on the location probability calculation. Their appearances among the classes can be assumed to have a random distribution. Since random distributions are often at least slightly imbalanced in the real world, the inclusion of stop words can bias the the model's predictions. Consequently, I used the NLTK stopwords module to remove stop words.
+#### Feature Generation via Location Name Fragments
+Inspection of the tweets shows that users have very inventive and effectively random ways of incorporating place-name fragments into their tweets. For example, a user from Philadelphia might refer to a Philly radio personality as @oracleOfDelphia. A nearby horse farm might have the name @filliesOfDelphia. And so forth.
+
+Thus the use of location name fragments can facilitate accuracy of prediction. An unseen word in a test document that contains “delph” as a substring, for example, likely originates in Philadelphia. Thus the TweetClassifier creates a set of location name fragments and uses them to generate tokens in the tweets being evaluated. This feature generation improved the score on the test data from ~64% to ~70%.
+
+Since the location candidates of future tweet datasets is unknown, the TweetClassifier uses two feature generation strategies: a hard-coded one based on the original set of 12 locations, and a dynamic one. Both strategies are used, and the one which has the
+most accurate results is used to write the output. The dynamic feature generation strategy improves the accuracy on the test data from ~64% to ~67%. 
 
 ### Instructions for Running the Code
 Download the Python and txt files from this directory. Your command-line should include arguments for 3 paths:
@@ -76,22 +85,3 @@ Download the Python and txt files from this directory. Your command-line should 
 Use the following syntax:
 
 `python geolocate.py path-to-training-data path-to-test-data path-to-output-file`
-Stop Words
-Very common words such as a, an , and the can have an outsize influence on the location
-probability calculation. Their appearances among the classes can be assumed to have a
-random distribution. Since random distributions are often at least slightly imbalanced, the
-inclusion of stop words can skew the results. Consequently, we used the NLTK stopwords
-module to eliminate stop words.
-Location Name Fragments
-Inspection of the tweets shows that users have very inventive and effectively random ways of
-incorporating place-name fragments into their tweets. For example, a user from Philadelphia
-might refer to a Philly radio personality as @oracleOfDelphia . A nearby horse farm might have
-the name @filliesOfDelphia . And so forth.
-Thus the use of location name fragments can facilitate accuracy of prediction. An unseen word
-in a test document that contains “delph” as a substring, for example, likely originates in
-Philadelphia. Thus our program creates a set of location name fragments and uses them to
-generate tokens in the tweets being evaluated.
-Since it is unknown which locations will be in the tweets used for instructor evaluation, our
-program uses two location name fragment strategies: a hard-coded one based on the original
-set of 12 locations, and a dynamic one. Both strategies are used, and the one which has the
-most accurate results is used to provide the required output
