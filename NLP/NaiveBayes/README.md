@@ -39,7 +39,7 @@ Consider a tweet that has 3 words, *w<sub>1</sub>, w<sub>2</sub>, and w<sub>1</s
 
 ![Bayes for tweets](Bayes_for_tweets.jpg?raw=true)
 
-If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. The posterior for each hypothesis reflects division by the same P(b<sub>1</sub>)P(b<sub>2</sub>)P(b<sub>3</sub>); therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
+If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. The posterior for each hypothesis reflects division by the same P(w<sub>1</sub>)P(w<sub>2</sub>)P(w<sub>3</sub>); therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
 
 It's worth noting that Naive Bayes is not very good at estimating the actual posterior probabilities, even though it is very good at predicting the best hypothesis.
 
@@ -53,20 +53,21 @@ Each word within the set of tweets is a feature. Given the vast number of tweets
 #### Avoiding Zero Probabilities.
 In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
 
-The `_calculateProbabilities()` method in the TweetClassifier class uses Laplace smoothing by adding one to the word occurrence count for each class (city). To avoid imbalances between classes with different sample sizes, the size of the total vocabulary in the corpus is added to the denominator which is used to calculate the probability of a word, given a location.
+The `_calculateProbabilities()` method in the TweetClassifier class uses Laplace smoothing by adding one to the word occurrence count for each class/city. To avoid imbalances between classes with different sample sizes, the size of the total vocabulary in the corpus is added to the denominator which is used to calculate the probability of a word, given a location.
 
 #### “Dirty” Data
 Inspection of a sample of tweets revealed several problems that interfered with accurate prediction:
 + Non-ASCii characters
 + Punctuation characters
 + HTML Special Entities (e.g., “&amp;gt;”)
+
 To address these problems, the TweetClassifier.py source file provides multiple functions to remove all such characters from the tweets.
 
 #### Lower Case vs. Upper Case
 In order to prevent different character case preferences of Twitter users from influencing the analysis, all tweets were lower-cased.
 
 #### Inclusion/Exclusion of Rare Terms
-Since extremely rare terms might have undue influence on the analysis, the algorithm was tested by varying the minimum threshold for word appearances in the training corpus. Specifically, accuracy for a threshold of appearances N = { 1 - 20 } was evaluated, and the
+Since extremely rare terms might have undue influence on the analysis, the algorithm was tested by varying the minimum threshold for word appearances in the training corpus. Specifically, accuracy for a threshold of appearances N = { 0 - 20 } was evaluated, and the
 maximum accuracy was selected. The threshold of N = 0 provided maximum accuracy, and the accuracy decreased almost monotonically as the appearance threshold increased. This should not be surprising; every small piece of information can increase the accuracy of the analysis.
 #### Stop Words
 Very common words such as *a*, *an*, and *the* can have an outsize influence on the location probability calculation. Their appearances among the classes can be assumed to have a random distribution. Since random distributions are often at least slightly imbalanced in the real world, the inclusion of stop words can bias the the model's predictions. Consequently, I used the NLTK stopwords module to remove stop words.
