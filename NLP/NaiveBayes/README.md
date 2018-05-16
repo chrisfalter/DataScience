@@ -5,14 +5,42 @@ One of the main tasks in natural language processing is the classification of do
 + Readability assessment: identifying the grade level at which a reader can be expected to understand a document
 
 In this exercise we will be classifying the geographical origin of tweets using the Naive Bayes algorithm.
-### How Naive Bayes Works
+### Bayes Theorem
 Let's start by reviewing Bayes Theorem. The standard equation is this...
 
-![Bayes equation](https://github.com/chrisfalter/DataScience/blob/master/NLP/NaiveBayes/Bayes_equation.jpg?raw=true)
+![Bayes equation](Bayes_equation.jpg?raw=true)
 
-...which reads like this: "The probability of A, given B, equals the probability of B, given A, times the probability of A, divided by the probability of B"
+...which reads like this: "The probability of A (given B) equals the probability of B (given A) times the probability of A, divided by the probability of B"
 
-What we learn from Bayes is that an observation can help us update our belief that something is true (with some probability):
+Bayes Theorem gives you a framework for updating a belief when you observe new evidence for or against the belief, as demonstrated by the following formulation of the theorem:
 
-![Bayes in English](https://github.com/chrisfalter/DataScience/blob/master/NLP/NaiveBayes/Bayes_in_English.jpg?raw=true)
+![Bayes in English](Bayes_in_English.jpg?raw=true)
 
+Let's define the terms:
++ **Prior probability** is the measure of our belief about some hypothesis *A* before we observe new evidence *B*. It corresponds to *P(A)* in the standard formulation. 
++ A **Likelihood function**  measures the probability that the evidence *B* would be observed, given the existence of *A*.
++ The **Evidence function** measures the probability that the evidence *B* would be observed, independent of *A* or *not-A*. The fact that it is in the denominator supports the intuitive notion that the more likely the observation of *B* is--independent of *A*--the less the observation can be used to support hypothesis *A*.
++ The **Posterior probability** is the measure of our belief in hypothesis *A* now that we have observed evidence *B*.
+
+If you would like to explore Bayes Theorem beyond this brief summary, blogger Li Chun provides[ a nice example and explanation](http://www.lichun.cc/blog/2013/07/understand-bayes-theorem-prior-likelihood-posterior-evidence/).
+
+### The Naive Bayes Algorithm
+When an observation *B* is multinomial, you can substitute the dimensions of B (b<sub>1</sub>, b<sub>2</sub>, etc.) as a set in place of B:
+
+![Multinomial Bayes Equation](Multinomial_Bayes.jpg?raw=true)
+
+If you must consider all of the interactions between B's dimensions, applying this equation to a hypothesis becomes extremely complex. But you can simplify the equation dramatically by adopting the *naive* assumption that B's dimensions are independent:
+
+![Naive Bayes Equation](Naive_Bayes_Equation.jpg?raw=true)
+
+While this independence assumption of Naive Bayes is not true in every case, it is true frequently enough that it supports a surprisingly accurate prediction model. At the same time, the algorithm is ready to make predictions just by calculating all of the priors and likelihoods in a single pass through the observations. It has a time complexity of O(ns), where n = the number of documents and s = average size of a document. In other words, its time complexity is linear, which makes Naive Bayes a highly attractive algorithm for classifying very large document corpora. Indeed, my implementation is able to evaluate approximately 36,000 train and test tweets in just a few seconds on a laptop.
+### Naive Bayes Applied to Tweet Geolocation
+Consider a tweet that has 3 words, *w<sub>1</sub>, w<sub>2</sub>, and w<sub>1</sub>*. You want to measure the hypothesis that it was tweeted from a certain metropolis, *city<sub>1</sub>*. Naive Bayes provides the mathematical framework:
+
+![Bayes for tweets](https://github.com/chrisfalter/DataScience/blob/master/NLP/NaiveBayes/Bayes_for_tweets.jpg)
+
+If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. They posterior for each hypothesis reflects division by the same P(b<sub>1</sub>)P(b<sub>2</sub>)P(b<sub>3</sub>), therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
+
+It's worth noting that Naive Bayes is not very good at estimating the actual posterior probabilities, even though it is very good at predicting the best hypothesis.
+
+### Design Decisions
