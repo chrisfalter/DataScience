@@ -37,10 +37,61 @@ While this independence assumption of Naive Bayes is not true in every case, it 
 ### Naive Bayes Applied to Tweet Geolocation
 Consider a tweet that has 3 words, *w<sub>1</sub>, w<sub>2</sub>, and w<sub>1</sub>*. You want to measure the hypothesis that it was tweeted from a certain metropolis, *city<sub>1</sub>*. Naive Bayes provides the mathematical framework:
 
-![Bayes for tweets](https://github.com/chrisfalter/DataScience/blob/master/NLP/NaiveBayes/Bayes_for_tweets.jpg)
+![Bayes for tweets](Bayes_for_tweets.jpg?raw=true)
 
 If you are comparing multiple hypotheses for the tweet's geolocation--e.g.., that it might have been tweeted from *city<sub>1</sub>* or *city<sub>2</sub>* or *city<sub>3</sub>*, etc.--then you do not need to calculate the denominator. They posterior for each hypothesis reflects division by the same P(b<sub>1</sub>)P(b<sub>2</sub>)P(b<sub>3</sub>), therefore the denominator can be ignored. Naive Bayes simply predicts the highest probability posterior from among all the candidate hypotheses.
 
 It's worth noting that Naive Bayes is not very good at estimating the actual posterior probabilities, even though it is very good at predicting the best hypothesis.
 
 ### Design Decisions
+This section discusses the source code in [the TweetClassifier class](TweetClassifier.py) and related functions. The [geolocate.py script file](geolocate.py) simply processes command line arguments and runs the TweetClassifier `train()` and `predict()` methods.
+#### Data Structures
+The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 10 cities) already identifies the distribution that matters in the analsis of tweet geolocation.
+
+#### Avoiding Zero Probabilities.
+In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document, given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
+
+The `_calculateProbabilities()` method in the TweetClassifier class uses Laplace smoothing by adding one to the word occurrence count for each class (city). To avoid imbalances between classes with different sample sizes, the size of the total vocabulary in the corpus is added to the denominator which is used to calculate the probability of a word, given a location.
+
+#### “Dirty” Data
+Inspection of a sample of tweets revealed several problems that interfered with accurate prediction:
++ Non-ASCii characters
++ Punctuation characters
++ HTML Special Entities (e.g., “&gt;”)
+To address these problems, the TweetClassifier.py source file provides multiple functions to rmove all such characters from the tweets.
+
+#### Lower Case vs. Upper Case
+In order to prevent different character case preferences of Twitter users from influencing the analysis, all tweets were lower-cased.
+
+#### Inclusion/Exclusion of Rare Terms
+Since extremely rare terms might have undue influence on the analysis, the algorithm was tested by varying the minimum threshold for word appearances in the training corpus. Specifically, accuracy for a threshold of appearances N = { 1 - 20 } was evaluated, and the
+maximum accuracy was selected. The threshold of N = 0 provided maximum accuracy, and the accuracy decreased almost monotonically as the appearance threshold increased. This should not be surprising; every small piece of information can increase the accuracy of the analysis.
+
+### Instructions for Running the Code
+Download the Python and txt files from this directory. Your command-line should include arguments for 3 paths:
++ The training data file
++ The test data file
++ An output file that holds each individual prediction in CSV format.
+
+Use the following syntax:
+
+`python geolocate.py path-to-training-data path-to-test-data path-to-output-file`
+Stop Words
+Very common words such as a, an , and the can have an outsize influence on the location
+probability calculation. Their appearances among the classes can be assumed to have a
+random distribution. Since random distributions are often at least slightly imbalanced, the
+inclusion of stop words can skew the results. Consequently, we used the NLTK stopwords
+module to eliminate stop words.
+Location Name Fragments
+Inspection of the tweets shows that users have very inventive and effectively random ways of
+incorporating place-name fragments into their tweets. For example, a user from Philadelphia
+might refer to a Philly radio personality as @oracleOfDelphia . A nearby horse farm might have
+the name @filliesOfDelphia . And so forth.
+Thus the use of location name fragments can facilitate accuracy of prediction. An unseen word
+in a test document that contains “delph” as a substring, for example, likely originates in
+Philadelphia. Thus our program creates a set of location name fragments and uses them to
+generate tokens in the tweets being evaluated.
+Since it is unknown which locations will be in the tweets used for instructor evaluation, our
+program uses two location name fragment strategies: a hard-coded one based on the original
+set of 12 locations, and a dynamic one. Both strategies are used, and the one which has the
+most accurate results is used to provide the required output
