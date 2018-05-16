@@ -6,7 +6,7 @@ One of the main tasks in natural language processing is the classification of do
 
 In this exercise we will be classifying the geographical origin of tweets using the Naive Bayes algorithm.
 ### Bayes Theorem
-Let's start by reviewing Bayes Theorem. The standard equation is this...
+Let's start by reviewing Bayes Theorem. The standard equation is...
 
 ![Bayes equation](Bayes_equation.jpg?raw=true)
 
@@ -49,7 +49,7 @@ This section discusses the source code in [the TweetClassifier class](TweetClass
 The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 10 cities) already identifies the distribution that matters in the analsis of tweet geolocation.
 
 #### Avoiding Zero Probabilities.
-In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document, given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
+In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
 
 The `_calculateProbabilities()` method in the TweetClassifier class uses Laplace smoothing by adding one to the word occurrence count for each class (city). To avoid imbalances between classes with different sample sizes, the size of the total vocabulary in the corpus is added to the denominator which is used to calculate the probability of a word, given a location.
 
