@@ -46,7 +46,7 @@ It's worth noting that Naive Bayes is not very good at estimating the actual pos
 ### Design Decisions
 This section discusses the source code in [the TweetClassifier class](TweetClassifier.py) and related functions. The [geolocate.py script file](geolocate.py) simply processes command line arguments, runs the TweetClassifier `train()` and `predict()` methods, and writes output to the console and file system.
 #### Data Structures
-The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 10 cities) already identifies the distribution that matters in the analysis of tweet geolocation.
+The TweetClassifier structures each document as a bag of words. Since each tweet is roughly the same 140 character length, there is no need to normalize by number of words in a document. Term frequency-inverse document frequency (TF-IDF) also seems unnecessary in light of the fact that the probability of a word (given each of the 12 cities) already identifies the distribution that matters in the analysis of tweet geolocation.
 
 #### Avoiding Zero Probabilities.
 In Naive Bayes the probability of a class, given a document, is the product of the prior probability of the class times the probability of each word in the document given the class. However, for rare words the probability might be zero for almost all of the classes, rendering the class probabilities as zero. Given a tweet with two or more rare words, every class could be evaluated as having a zero probability.
@@ -58,7 +58,7 @@ Inspection of a sample of tweets revealed several problems that interfered with 
 + Non-ASCii characters
 + Punctuation characters
 + HTML Special Entities (e.g., “&amp;gt;”)
-To address these problems, the TweetClassifier.py source file provides multiple functions to rmove all such characters from the tweets.
+To address these problems, the TweetClassifier.py source file provides multiple functions to remove all such characters from the tweets.
 
 #### Lower Case vs. Upper Case
 In order to prevent different character case preferences of Twitter users from influencing the analysis, all tweets were lower-cased.
