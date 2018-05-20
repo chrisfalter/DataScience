@@ -7,6 +7,7 @@ I hope you learn something useful as you read the code and discussions in the to
 * [Python](https://github.com/chrisfalter/DataScience/tree/master/Python)
 * [Network science](https://github.com/chrisfalter/DataScience/tree/master/NetworkScience)
 * [Artificial Intelligence](https://github.com/chrisfalter/DataScience/tree/master/AI)
+* [Natural Language Processing (NLP)](https://github.com/chrisfalter/DataScience/tree/master/NLP)
 ## My Story
 I have been a data geek all my life. For science fair projects, I didn't build baking soda volcanos; instead, I analyzed weather forecast accuracy and factors in student fitness. As an undergrad at Princeton, I aced linear algebra, multivariable calculus, and several math-track economics courses. My interests in social justice and statistical analysis aligned as I pored over US Census Bureau data to identify gentrification trends for a course in urban economics. Continuing in this vein, I enrolled in a graduate level course in Comparative Urban Development, where I happily immersed myself in analyzing migration and growth patterns in India.
 
