@@ -11,7 +11,7 @@ I hope you learn something useful as you read the code and discussions in the to
 ## My Story
 I have been a data geek all my life. For science fair projects, I didn't build baking soda volcanos; instead, I analyzed weather forecast accuracy and factors in student fitness. As an undergrad at Princeton, I aced linear algebra, multivariable calculus, and several math-track economics courses. My interests in social justice and statistical analysis aligned as I pored over US Census Bureau data to identify gentrification trends for a course in urban economics. Continuing in this vein, I enrolled in a graduate level course in Comparative Urban Development, where I happily immersed myself in analyzing migration and growth patterns in India.
 
-Shortly after my graduation in 1983, I joined a Christian humanitarian organization as the administrator of a nutrition and health education project in West Africa. To increase our effectiveness, my wife and I were required to abandon the American lifestyle in favor of local dress, custom, and language. Fortunately, I was not called upon to abandon my passion for data.
+Shortly after my graduation in 1983, I joined a Christian humanitarian organization as the administrator of a nutrition and health education project in West Africa. To increase our effectiveness, my wife and I were required to abandon our American lifestyle in favor of local dress, custom, and language. Fortunately, I was not called upon to abandon my passion for data.
 
 The previous project management had collected children's weight and age data as points on a scatter plot. While this permitted a rough evaluation of the health of enrolled children, I and my leadership wanted to explore questions such as:
 
