@@ -11,3 +11,5 @@ Python is an excellent all-purpose language that can be used for scripting, web 
   + K-Nearest Neighbors
   + Gradient Boost
   + Model Stack of Best 3 Models
+  
+  It also shows how to use `sklearn.pipeline.Pipeline` and `sklearn.preprocessing.FunctionTransformer` to create a custom data preprocessing pipeline, and how to use `sklearn.model_selection.GridSearchCV` to tune model hyperparameters.
