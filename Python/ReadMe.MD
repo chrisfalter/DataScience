@@ -13,3 +13,4 @@ Python is an excellent all-purpose language that can be used for scripting, web 
   + Model Stack of Best 3 Models
   
   It also shows how to use `sklearn.pipeline.Pipeline` and `sklearn.preprocessing.FunctionTransformer` to create a custom data preprocessing pipeline, and how to use `sklearn.model_selection.GridSearchCV` to tune model hyperparameters.
++ [Optimizing a Preprocessing Pipeline with scikit-learn](https://github.com/chrisfalter/DataScience/blob/master/NLP/SentimentAnalysisOfAmazonReviews.ipynb) - This experiment uses a regression model to predict where along the range of sentiment a particular Amazon electronics review falls. This experiment also demonstrates how to use `sklearn.model_selection.GridSearchCV` to tune a preprocessing pipeline. 
