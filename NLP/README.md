@@ -5,6 +5,7 @@ This section of my repo contains my explorations and insights in NLP.
 
 ### Topics:
 + [Document Classification with Naive Bayes](https://github.com/chrisfalter/DataScience/tree/master/NLP/NaiveBayes) - One of the main NLP tasks is document classification. Look through this project if you want to understand how the Naive Bayes algorithm works and how it can be applied to the geolocation of tweets.
++ {Spam Classification with PySpark](https://github.com/chrisfalter/DataScience/blob/master/ML_Spark/SpamClassifier_SPARK.ipynb) - This notebook uses logistic regression to build a spam classifier against the CSMDC 2010 Spam data set, which has 4327 labeled observations. It uses the `PySpark` interface to Spark MLLib, which provides a lot of "big data" functionality. However, the exploration runs into some serious shortcomings in `pyspark.mllib` for real-world use. Fortunately, Spark also provides updated machine learning functionality in the `pyspark.ml` library, which future notebooks will explore.
 + [Battle of the Tweet Classification Algorithms](https://github.com/chrisfalter/DataScience/blob/master/NLP/Battle_of_Tweet_Classification_Algorithms.ipynb) - Having written an implementation of the Naive Bayes algorithm to predict the geolocation of test tweets from a tweet corpus, I thought it would be worthwhile to see how it compares to other algorithms that can be used for document classification. This experiment uses scikit-learn's model selection features to compare the following algorithms:
   + Naive Bayes
   + Adaboost
