@@ -1,5 +1,5 @@
 # Scala
-Although Scala may be considered a niche language (PyPL says it has 5% of the usage of Python), the niche it occupies is very important!
+Although Scala may be considered a niche language (PyPL says it has only 5% of the Python's usage), the niche it occupies is very important!
 + Scala is the native language of Apache Spark and Apache Storm, 2 very important big data platform components.
 + Scala is a functional language that is well-suited for reactive, high-volume processing. Using Scala guides you seamlessly into the parallel processing against immutable data paradigm.
 + Scala compiles directly to Java byte code, so it can make use of _any_ Java library.
